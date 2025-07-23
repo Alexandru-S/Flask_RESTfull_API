@@ -44,23 +44,41 @@ Version 19.7.0.0.0
 
 I have developed and run the code on Ubuntu 20.04.1 LTS. Should you wish to run the code on a different OS please take care to make sure that the packages in use are supported on the different systems.
 
-The first step is to copy the code to a local directory to be run, this can be achieved by running the following git command:  
-`git clone https://github.com/Alexandru-S/RESTful_API.git `
+The first step is to copy the code to a local directory to be run, this can be achieved by running the following git command:
+
+```bash
+git clone https://github.com/Alexandru-S/RESTful_API.git
+```
 
 Once the code is cloned to your directory a virtual environment will need to be created to store the python packages we are using.  
 This can be achieved by running the following commands in the command line:  
-> if virtualenv is not present in the system already  
-`pip install virtualenv`  
+> if virtualenv is not present in the system already
 
-> create a python3 virtual environment  
-`virtualenv --python python3 env3`  
+```bash
+pip install virtualenv
+```  
 
-> activate the environment  
-`source env3/bin/activate`  
+> create a python3 virtual environment
 
-> install all the required packages  
-`cd RESTful_API  `  
-`pip install -r requirements.txt`  
+```bash
+virtualenv --python python3 env3
+```  
+
+> activate the environment
+
+```bash
+source env3/bin/activate
+```  
+
+> install all the required packages
+
+```bash
+cd RESTful_API
+```
+  
+```bash
+pip install -r requirements.txt
+```  
 
 After all the packages have been successfully installed in the system we can go ahead and run the application.
 
@@ -77,8 +95,11 @@ Once the file is created place one copy of it in the web_app directory and anoth
 Why 2? For some reason I was not able to access it from inside the tests directory so added a copy in the tests directory as well.  
 
 Once this is all filled and set up, run the following commands to launch the web app.
-> run the application  
-`python main.py`  
+> run the application
+
+```bash
+python main.py
+```  
 
 You should see something like this in your command line  
 
@@ -99,18 +120,30 @@ The user credentials are the same as the ones provided in the db_creds.py
 > stop the application  
 You need to click on the command line that is running the web app and click `CTRL + C `  
 
-> exit the virtual environment  
-`deactivate `  
+> exit the virtual environment
+
+```bash
+deactivate
+```
 
 If you wish to run the application you will need to cd into the tests directory and run the following commands  
-> cd into tests  
-`cd tests`  
+> cd into tests
+  
+```bash
+cd tests
+```  
 
-> Run the small testing script  
-`python test.py`  
+> Run the small testing script
 
-> Run the tests  
-`python new_tests.py -v`  
+```bash
+python test.py
+```  
+
+> Run the tests
+
+```bash
+python new_tests.py -v
+```  
 
 ## Feature Explanations
 
