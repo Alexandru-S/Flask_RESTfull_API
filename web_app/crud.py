@@ -46,7 +46,7 @@ def from_sql(row):
     new_data = json.dumps(data, default=date_converter)
     new_new_data = json.loads(new_data)
     if 'country_code' in new_new_data.keys():
-        URL = ('https://restcountries.eu/rest/v2/alpha?codes={code1};{code1};{code1}').format(code1 = row.country_code)
+        URL = ('https://restcountries.eu/rest/v2/alpha?codes={code1};{code1};{code1}').format(code1=row.country_code)
         data = requests.get(url=URL).json()
         new_new_data['country'] = data[0]['name']
         new_new_data.pop('country_code')
@@ -109,4 +109,3 @@ def find_by_join_2(model1, model2, var1):
             x['department_name'] = list(query2.keys())[list(query2.values()).index(x['department_code'])]
             x.pop('department_code')
     return result
-

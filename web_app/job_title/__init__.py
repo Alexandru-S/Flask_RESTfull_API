@@ -9,7 +9,6 @@ executions to perform as requested.
 from web_app import Resource
 from web_app import auth
 from web_app import abort
-from web_app import reqparse
 from .models import JOB_TITLE
 from web_app.department.models import DEPARTMENT
 from web_app.crud import list_all_join, find_by_join_2
@@ -31,7 +30,7 @@ class JobTitle(Resource):
             """ Function activated when job_titles argumentendpoint is passed
                 :param model1: JOB_TITLE instance
                 :param model2: DEPARTMENT instance
-                :param var1: argument being department name 
+                :param var1: argument being department name
                 :return: json
             """
             result = find_by_join_2(JOB_TITLE, DEPARTMENT, var1)

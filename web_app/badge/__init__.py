@@ -15,14 +15,14 @@ from web_app.crud import list_all, list_with_var1, list_with_number
 
 
 db_get_args = reqparse.RequestParser()
-db_get_args.add_argument("badge_number", type=int, help="Value of key not int") # sets arguments to look for
+db_get_args.add_argument("badge_number", type=int, help="Value of key not int")  # sets arguments to look for
 
 
 class Badge(Resource):
     decorators = [auth.login_required]
 
     def get(self, var1=None):
-        args = db_get_args.parse_args() # parses arguments passed
+        args = db_get_args.parse_args()  # parses arguments passed
 
         if args.badge_number is not None:
             """
@@ -30,7 +30,7 @@ class Badge(Resource):
                 :param model: BADGE instance
                 :param value: BADGE badge_number #for comparison
                 :param args: number passed from url
-                :return: 
+                :return:
                     if found:
                     :return: json
                     else:
@@ -58,7 +58,7 @@ class Badge(Resource):
                 :param value: BADGE status #for comparison
                 :param value: BADGE expiry date #for comparison
                 :param args: string passed from url
-                :return: 
+                :return:
                     if found:
                     :return: json
                     else:

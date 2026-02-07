@@ -9,7 +9,7 @@ USERNAME = db_creds.USERNAME
 PASSWORD = db_creds.PASSWORD
 URLS = ['department', 'badges', 'job_titles', 'employees']
 
-            
+
 class LogInTest(unittest.TestCase):
     def test_login(self):
         for x in URLS:
@@ -32,6 +32,7 @@ class LogInTest(unittest.TestCase):
             print('URL>>>>>>>>>', x)
             self.assertEqual(401, response.status_code)
             self.assertEqual(int, type(response.status_code))
+
 
 if __name__ == '__main__':
     unittest.main()

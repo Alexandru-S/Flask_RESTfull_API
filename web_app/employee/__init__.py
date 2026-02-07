@@ -27,7 +27,7 @@ class Employee(Resource):
     def get(self, var1=None):
         args = db_get_args.parse_args()
         if args.department_name is not None:
-            """ Function activated when employees endpoint is passed and 
+            """ Function activated when employees endpoint is passed and
                department_name is given.
                 :param model: EMPLOYEE instance
                 :param model: JOB_TITLE instance
@@ -40,7 +40,7 @@ class Employee(Resource):
                 abort(422, message="Could not find any employees in that department")
             return result
         if var1 is None:
-            """ Function activated when employees endpoint is passed and 
+            """ Function activated when employees endpoint is passed and
                 we only want a list of all employees returned back
                 :param model: EMPLOYEE instance
                 :param model: JOB_TITLE instance
@@ -50,7 +50,7 @@ class Employee(Resource):
             result = list_all_employees(EMPLOYEE, JOB_TITLE, DEPARTMENT)
             return result
         if var1 == 'active':
-            """ Function activated when employees endpoint is passed and 
+            """ Function activated when employees endpoint is passed and
                active argument is given
                 :param model: EMPLOYEE instance
                 :param model: JOB_TITLE instance
