@@ -83,7 +83,7 @@ pip install -r requirements.txt
 After all the packages have been successfully installed in the system we can go ahead and run the application.
 
 ## Running the application in Localhost (**IMPORTANT**)
-You will need to create a file with the name **db_creds.py** with the following format inside of it  
+You will need to create a file with the name **.env** with the following format inside of it  
 ```
 HOSTNAME = 'developmentb.xxxxxYOUR_DB_ID_HERExxxxxx.eu-west-1.rds.amazonaws.com'
 USERNAME = 'your_username for the database'
