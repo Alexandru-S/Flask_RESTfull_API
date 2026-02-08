@@ -5,8 +5,10 @@ line-length = 79
 
 [lint]
 extend-select = [
-  "E501" # Add the `line-too-long` rule to the enforced rule set.
+  "E501", # Add the `line-too-long` rule to the enforced rule set.
+  "E402"  # ignore import order for initialization purposes
 ]
+ignore = ["E402"]
 
 [lint.pydocstyle]
 convention = "google"

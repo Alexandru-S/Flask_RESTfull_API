@@ -5,12 +5,11 @@ executions to perform as requested.
 """
 # coding=utf-8
 
-from web_app import Resource
-from web_app import auth
-from web_app import abort
+from flask_restful import Resource, abort
 from .models import JOB_TITLE
 from web_app.department.models import DEPARTMENT
 from web_app.crud import list_all_join, find_by_join_2
+from web_app import auth
 
 
 class JobTitle(Resource):

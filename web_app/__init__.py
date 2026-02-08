@@ -5,16 +5,17 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import generate_password_hash, check_password_hash
 from dotenv import load_dotenv
-from .department import Department
-from .employee import Employee
-from .badge import Badge
-from .job_title import JobTitle
 
 load_dotenv()
 db = SQLAlchemy()
 auth = HTTPBasicAuth()
 app = Flask(__name__)
 api = Api(app)
+
+from .department import Department
+from .employee import Employee
+from .badge import Badge
+from .job_title import JobTitle
 
 users = {os.getenv('USERNAME'): generate_password_hash(os.getenv('PASSWORD'))}
 

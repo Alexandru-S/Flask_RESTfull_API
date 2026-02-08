@@ -6,14 +6,12 @@ executions to perform as requested.
 # coding=utf-8
 
 
-from web_app import Resource
-from web_app import auth
+from flask_restful import Resource, abort, reqparse
 from .models import EMPLOYEE
 from web_app.job_title.models import JOB_TITLE
 from web_app.department.models import DEPARTMENT
-from web_app import abort
-from web_app import reqparse
 from web_app.crud import check_with_var1, find_by_join, list_all_employees
+from web_app import auth
 
 
 db_get_args = reqparse.RequestParser()

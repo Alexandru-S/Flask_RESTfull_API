@@ -5,9 +5,8 @@ executions to perform as requested.
 """
 # coding=utf-8
 
-from web_app import Resource
+from flask_restful import Resource, abort
 from web_app import auth
-from web_app import abort
 from .models import DEPARTMENT
 from web_app.crud import list_all
 

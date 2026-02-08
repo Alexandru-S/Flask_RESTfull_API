@@ -5,18 +5,17 @@ executions to perform as requested.
 """
 # coding=utf-8
 
-from web_app import Resource
+from flask_restful import Resource, reqparse, abort
 from web_app import auth
 from .models import BADGE
-from web_app import abort
-from web_app import reqparse
 from web_app.crud import list_all, list_with_var1, list_with_number
 
 
 db_get_args = reqparse.RequestParser()
-db_get_args.add_argument("badge_number",
-type=int,
-help="Value of key not int")  # sets arguments to look for
+db_get_args.add_argument(
+    "badge_number",
+    type=int,
+    help="Value of key not int")  # sets arguments to look for
 
 
 class Badge(Resource):
