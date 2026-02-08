@@ -83,14 +83,8 @@ pip install -r requirements.txt
 After all the packages have been successfully installed in the system we can go ahead and run the application.
 
 ## Running the application in Localhost (**IMPORTANT**)
-You will need to create a file with the name **.env** with the following format inside of it  
-```
-HOSTNAME = 'developmentb.xxxxxYOUR_DB_ID_HERExxxxxx.eu-west-1.rds.amazonaws.com'
-USERNAME = 'your_username for the database'
-PASSWORD = 'your_password for the database'
-SID = 'your sid'
-PORT = '1521'
-```
+You will need to create a file with the name **.env** with the format of .env.example inside of it  
+
 Once the file is created place one copy of it in the web_app directory and another copy in the tests directory.  
 Why 2? For some reason I was not able to access it from inside the tests directory so added a copy in the tests directory as well.  
 
@@ -98,7 +92,7 @@ Once this is all filled and set up, run the following commands to launch the web
 > run the application
 
 ```bash
-python main.py
+docker compose up --build
 ```  
 
 You should see something like this in your command line  

@@ -22,6 +22,7 @@ class Badge(Resource):
     decorators = [auth.login_required]
 
     def get(self, var1=None):
+        print("79874684646464")
         args = db_get_args.parse_args()  # parses arguments passed
 
         if args.badge_number is not None:

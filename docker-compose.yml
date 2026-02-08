@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      USERNAME: "${USERNAME:-admin}"
+      PASSWORD: "${PASSWORD:-admin}"
+      AUTO_CREATE_SCHEMA: "${AUTO_CREATE_SCHEMA:-true}"
+      DB_USER: "${DB_USER:-postgres}"
+      DB_PASSWORD: "${DB_PASSWORD:-postgres}"
+      DB_HOST: "${DB_HOST:-db}"
+      DB_PORT: "${DB_PORT:-5432}"
+      DB_NAME: "${DB_NAME:-appdb}"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: "${DB_USER:-postgres}"
+      POSTGRES_PASSWORD: "${DB_PASSWORD:-postgres}"
+      POSTGRES_DB: "${DB_NAME:-appdb}"
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
