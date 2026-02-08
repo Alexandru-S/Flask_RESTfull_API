@@ -1,0 +1,12 @@
+# Support Python 3.10+.
+target-version = "py310"
+# Set the maximum line length to 79.
+line-length = 79
+
+[lint]
+extend-select = [
+  "E501" # Add the `line-too-long` rule to the enforced rule set.
+]
+
+[lint.pydocstyle]
+convention = "google"

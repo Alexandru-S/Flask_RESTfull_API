@@ -30,7 +30,12 @@ api.add_resource(Department, '/department')
 api.add_resource(Badge, '/badges', '/badges/<string:var1>')
 api.add_resource(Employee, '/employees', '/employees/<string:var1>')
 api.add_resource(JobTitle, '/job_titles', '/job_titles/<string:var1>')
-SQLALCHEMY_DATABASE_URI = ('oracle+cx_oracle://{username}:{password}@{hostname}:{port}/{sid}').format(username=os.getenv('USERNAME'), password=os.getenv('PASSWORD'), hostname=os.getenv('HOSTNAME'), port=os.getenv('PORT'), sid=os.getenv('SID'))
+SQLALCHEMY_DATABASE_URI = ('oracle+cx_oracle://{username}:{password}@{hostname}:{port}/{sid}').format(
+    username=os.getenv('USERNAME'),
+    password=os.getenv('PASSWORD'),
+    hostname=os.getenv('HOSTNAME'),
+    port=os.getenv('PORT'),
+    sid=os.getenv('SID'))
 
 
 def create_app(config_name):

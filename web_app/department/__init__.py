@@ -1,5 +1,4 @@
-"""
-The Department Module.
+"""The Department Module.
 
 This module contains the Department Class and logic for the
 executions to perform as requested.
@@ -17,9 +16,9 @@ class Department(Resource):
     decorators = [auth.login_required]
 
     def get(self):
-        """ Function activated when departments endpoint is passed
-            :param model: DEPARTMENT instance
-            :return: json
+        """Function activated when departments endpoint is passed
+        :param model: DEPARTMENT instance
+        :return: json
         """
         result = list_all(DEPARTMENT)
         if result is None or len(result) == 0:

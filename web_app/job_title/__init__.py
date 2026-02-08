@@ -1,5 +1,4 @@
-"""
-The JobTitle Module.
+"""The JobTitle Module.
 
 This module contains the JobTitle Class and logic for the
 executions to perform as requested.
@@ -35,7 +34,7 @@ class JobTitle(Resource):
             """
             result = find_by_join_2(JOB_TITLE, DEPARTMENT, var1)
             if result is None or len(result) == 0:
-                abort(422, message="Could not find any job_titles in that department")
+                abort(422, message="No job_titles found in that department")
             return result
         else:
             abort(404, message="Could not find data with that id")

@@ -1,5 +1,4 @@
-"""
-The Badge Module.
+"""The Badge Module.
 
 This module contains the Badge Class and logic for the
 executions to perform as requested.
@@ -15,7 +14,9 @@ from web_app.crud import list_all, list_with_var1, list_with_number
 
 
 db_get_args = reqparse.RequestParser()
-db_get_args.add_argument("badge_number", type=int, help="Value of key not int")  # sets arguments to look for
+db_get_args.add_argument("badge_number",
+type=int,
+help="Value of key not int")  # sets arguments to look for
 
 
 class Badge(Resource):
@@ -36,7 +37,9 @@ class Badge(Resource):
                     else:
                     :return: error
             """
-            result = list_with_number(BADGE, BADGE.badge_number, args.badge_number)
+            result = list_with_number(BADGE,
+            BADGE.badge_number,
+            args.badge_number)
             if result is None or len(result) == 0:
                 abort(404, message="Could not find any badges with that id")
             return result
@@ -51,7 +54,11 @@ class Badge(Resource):
             return result
 
         if var1 == 'active':
-            result = list_with_var1(BADGE, BADGE.badge_status, BADGE.badge_expiry_date, "Active")
+            result = list_with_var1(
+                BADGE,
+                BADGE.badge_status,
+                BADGE.badge_expiry_date,
+                "Active")
             """
             If active parameter passed
                 :param model: BADGE instance
